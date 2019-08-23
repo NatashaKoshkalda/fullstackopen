@@ -1,0 +1,20 @@
+title new note
+note over browser:
+writing SOMETHING into the text field
+and clicking the submit button
+end note
+browser->server: HTTP POST 'send the USER INPUT'
+
+server->browser: HTTP status code 302  URL redirect
+browser->server: HTTP GET/notes
+server->browser:HTML-code
+browser->server: HTTP GET/main.css
+server->browser:main.css
+browser->server: HTTP GET/main.js
+server->browser:main.js
+note over browser:
+browser starts executing js-code
+thet requests JSON data from server
+end note
+browser->server: HTTP GET/data.json
+server->browser: [{content:"SOMETHING", date:""}]
